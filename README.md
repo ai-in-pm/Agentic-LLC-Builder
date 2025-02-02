@@ -1,86 +1,127 @@
 # Agentic LLC Builder
 
-A comprehensive AI-powered platform for LLC formation, leveraging a team of specialized AI agents to handle every aspect of the process. The system supports creating LLCs with both human employees and AI agents, each assigned unique Employee IDs and specific roles.
-
-## AI Agents
-
-### 1. Legal Architect Agent
-- Handles document preparation and filing
-- Ensures legal compliance
-- Manages state-specific requirements
-- Generates legal documentation
-
-### 2. HR Strategist Agent
-- Manages employee onboarding
-- Handles EIN applications
-- Sets up HR policies and procedures
-- Coordinates benefits and compensation
-
-### 3. Financial Expert Agent
-- Sets up financial structures
-- Manages banking requirements
-- Handles tax registration
-- Establishes accounting systems
-
-### 4. Governance Officer Agent
-- Ensures regulatory compliance
-- Establishes governance frameworks
-- Manages organizational policies
-- Monitors compliance requirements
-
-### 5. PMO Director Agent
-- Coordinates formation process
-- Manages timelines and milestones
-- Allocates resources
-- Tracks project progress
-
-### 6. Evaluation Analyst Agent
-- Analyzes formation requirements
-- Assesses risks and opportunities
-- Provides recommendations
-- Monitors success metrics
-
-### 7. ISO Agent
-- Ensures ISO standards compliance
-- Manages certification processes
-- Monitors quality systems
-- Provides implementation guidance
+An AI-powered LLC formation assistant that uses specialized AI agents to guide you through the process of forming and managing your LLC.
 
 ## Features
 
-### State-Specific Requirements
-- Comprehensive formation requirements for all 50 states
-- Accurate filing fees and processing times
-- State-specific maintenance requirements
-- Publication requirements where applicable
+### 🤖 Specialized AI Agents
+- **Legal Architect**: Handles legal documentation and filings
+- **Financial Expert**: Manages financial planning and tax considerations
+- **HR Strategist**: Guides through employment and benefits
+- **Governance Officer**: Ensures compliance and best practices
+- **PMO Director**: Manages project timelines and milestones
+- **Evaluation Analyst**: Provides data-driven insights
+- **ISO Agent**: Handles standards and certifications
+- **Industry Specialists**: Expert guidance for specific sectors
 
-### Professional LLC Support
-- Industry-specific requirements for regulated professions
-- State-by-state ownership restrictions
-- Insurance and bonding requirements
-- Board approval and licensing requirements
+### 🧠 Advanced NLP Capabilities
+- Natural language understanding with spaCy
+- Sentiment analysis for better response tuning
+- Entity recognition for states, organizations, money, dates
+- Document type classification
+- Urgency and complexity assessment
+- Multi-turn conversation management
 
-### Foreign LLC Management
-- Foreign qualification requirements
-- Certificate of Good Standing management
-- Registered agent requirements
-- Cross-state compliance tracking
+### 💫 Interactive Features
+- Rich text interface with color-coded responses
+- Visual process timelines
+- Interactive comparison tables
+- Progress tracking
+- Dynamic suggestions and buttons
+- Industry-specific workflows
 
-### Job Role Management
-- Human position descriptions and requirements
-- AI agent capabilities and integration points
-- Salary ranges for human positions
-- Clear responsibilities and qualifications
+### 🏢 Industry-Specific Flows
+- Technology Startups
+- E-commerce Businesses
+- Professional Services
+- Manufacturing
+- Healthcare
+- Real Estate
+- Restaurant & Hospitality
+- Creative Services
 
-### ISO Standards Support
-- ISO 9001 (Quality Management)
-- ISO 27001 (Information Security)
-- ISO 31000 (Risk Management)
-- ISO 14001 (Environmental Management)
-- ISO 45001 (Occupational Health & Safety)
-- ISO 22301 (Business Continuity)
-- ISO 20000 (IT Service Management)
-- ISO 50001 (Energy Management)
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ai-in-pm/Agentic-LLC-Builder.git
+cd Agentic-LLC-Builder
+```
+
+2. Create and activate a virtual environment:
+```bash
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Install spaCy language model:
+```bash
+python -m spacy download en_core_web_sm
+python -m textblob.download_corpora
+```
+
+## Usage
+
+1. Start the application:
+```bash
+python main.py
+```
+
+2. Follow the interactive prompts to:
+   - Form a new LLC
+   - Get industry-specific guidance
+   - Compare state requirements
+   - Plan your business structure
+   - Manage compliance requirements
+
+## Example Interactions
+
+```
+You: I want to start a tech startup in California
+AI: Let me connect you with our Technology Industry Specialist...
+[Shows tech startup formation timeline]
+
+You: What are the tax implications compared to Delaware?
+AI: [Displays detailed tax comparison table]
+Financial Expert: Here's a breakdown of the key tax considerations...
+
+You: How many developers can I hire as contractors?
+AI: [Switches to HR Strategist]
+HR Strategist: Let me guide you through the contractor vs. employee considerations...
+```
+
+## Advanced Features
+
+### Industry-Specific Guidance
+- Regulatory requirements
+- Common business structures
+- Industry-standard compliance
+- Sector-specific tax considerations
+- Specialized insurance needs
+
+### Visual Aids
+- Formation process timelines
+- State comparison matrices
+- Cost breakdown charts
+- Compliance checklists
+- Milestone tracking
+
+### Intelligent Assistance
+- Context-aware responses
+- Proactive suggestions
+- Multi-agent collaboration
+- Progress tracking
+- Document templates
 
 ## Project Structure
 
@@ -108,82 +149,21 @@ agentic-llc-builder/
 └── scripts/                    # Helper scripts
 ```
 
-## Getting Started
-
-### Prerequisites
-```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-.\venv\Scripts\activate   # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Basic Usage
-
-```python
-from agents.agent_manager import AgentManager
-from agents.agent_manager import LLCFormationRequest
-
-# Create formation request
-request = LLCFormationRequest(
-    business_name="Tech Innovators LLC",
-    state_code="DE",
-    llc_type="single-member",
-    industry="Technology",
-    owner_info=[{
-        "name": "John Doe",
-        "role": "Managing Member",
-        "ownership": 100
-    }]
-)
-
-# Initialize agent manager
-manager = AgentManager()
-
-# Process formation
-results = manager.process_llc_formation(request)
-```
-
-### Professional LLC Formation
-
-```python
-# Create professional LLC request
-prof_request = LLCFormationRequest(
-    business_name="Medical Group LLC",
-    state_code="CA",
-    llc_type="professional",
-    industry="Medical",
-    owner_info=[{
-        "name": "Dr. Jane Smith",
-        "role": "Managing Member",
-        "ownership": 100,
-        "license": "MD12345"
-    }]
-)
-```
-
-## Documentation
-
-Detailed documentation is available in the `/docs` directory:
-- [Agent Documentation](docs/agents.md)
-- [State Requirements](docs/states.md)
-- [API Reference](docs/api.md)
-- [Job Descriptions](docs/jobs.md)
-
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact our support team.
 
 ## Acknowledgments
 
